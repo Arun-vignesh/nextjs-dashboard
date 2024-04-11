@@ -20,7 +20,12 @@ export default async function CardWrapper() {
     numberOfInvoices,
     totalPaidInvoices,
     totalPendingInvoices
-  } = await fetchCardData();
+  } = await fetchCardData() as {
+    numberOfCustomers: number;
+    numberOfInvoices: number;
+    totalPaidInvoices: string;
+    totalPendingInvoices: string;
+  };
   return (
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}
